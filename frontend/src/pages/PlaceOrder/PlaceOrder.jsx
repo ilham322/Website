@@ -1,5 +1,6 @@
 import axios from 'axios'
-import React from 'react'
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useContext } from 'react'
 import { StoreContext } from '../../context/StoreContext'
 import './PlaceOrder.css'
@@ -23,7 +24,7 @@ const PlaceOrder = () => {
 
   const placeOrder = async (event) => {
     event.preventDefault();
-    let orderItem = [];
+    let orderItems = [];
     food_list.map((item)=>{
       if (cartItems[item._id]>0) {
         let itemInfo = item;
@@ -34,7 +35,7 @@ const PlaceOrder = () => {
     let orderData = {
       address:data,
       items:orderItems,
-      amount:getTotalCartAmount()+2,
+      amount:getTotalCartAmount()+10000,
     }
     let response = await axios.post(url+"/api/order/place",orderData,{headers:{token}});
     if (response.data.success) {
@@ -65,7 +66,7 @@ const PlaceOrder = () => {
         <input required name='nama' onChange={onChangeHandler} value={data.nama} type="text" placeholder='Nama' />
         <input required name='email' onChange={onChangeHandler} value={data.email} type="email" placeholder='Email' />
         <input required name='alamat' onChange={onChangeHandler} value={data.alamat} type="text" placeholder='Alamat' />
-        <input required name='nohp' onChange={onChangeHandler} value={data.nohp} type="text" placeholder='No. Hp' />
+        <input required name='hp' onChange={onChangeHandler} value={data.hp} type="text" placeholder='No.Hp' />
       </div>
       <div className="cart-total">
           <h2>Cart Total</h2>

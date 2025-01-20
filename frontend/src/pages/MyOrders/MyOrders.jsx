@@ -5,9 +5,10 @@ import { useState } from 'react'
 import { StoreContext } from '../../context/StoreContext'
 import './MyOrders.css'
 import axios from "axios";
+import { assets } from '../../../../admin/src/assets/assets'
 
 const MyOrders = () => {
-
+    
     const {url,token} = useContext(StoreContext);
     const [data,setData] = useState([]);
 
@@ -29,8 +30,8 @@ const MyOrders = () => {
       <div className="container">
         {data.map((order,index)=>{
             return (
-                <div key={index} className='my-orders-order'>
-                    <img src="{assets.parcel_icon}" alt="" />
+                <div key={index} className='my-orders-order'> 
+                    <img src={assets.parcel_icon} alt="" />
                     <p>{order.items.map((item,index)=>{
                         if (index === order.items.length-1) {
                             return item.name+" x "+item.quantity

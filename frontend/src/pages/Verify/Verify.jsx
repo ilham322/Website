@@ -3,6 +3,7 @@ import React, { useContext } from 'react'
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { StoreContext } from '../../context/StoreContext';
+import { useSearchParams } from 'react-router-dom';
 import './Verify.css'
 
 const Verify = () => {

@@ -8,7 +8,7 @@ const Footer = () => {
       <div className="footer-content">
         <div className="footer-content-left">
             <img src={assets.logo} alt="" />
-            <p>asdadsadasdadadadada</p>
+            <p>Social Media Kami</p>
             <div className="footer-social-icons">
                 <img src={assets.facebook_icon} alt="" />
                 <img src={assets.twitter_icon} alt="" />
@@ -27,8 +27,8 @@ const Footer = () => {
         <div className="footer-content-right">
             <h2>GET IN TOUCH</h2>
             <ul>
-                <li>080239393232</li>
-                <li>contact@happykitchen.com</li>
+                <li>081234567890</li>
+                <li>happykitchen322@gmail.com</li>
             </ul>
         </div>
       </div>
